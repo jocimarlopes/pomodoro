@@ -1,10 +1,17 @@
 import time
 import sys
+import os
+
+
 
 play = 0
 
+duration = 3 #segundos
+freq = 1440 #Hz
+
 while play == 0:
-    print("APLICAÇÃO SEM SOM (BETA)")
+    print("APLICAÇÃO P/ LINUX (BETA)")
+    #os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
     time.sleep(1)
     print("Versão: 0.2")
     time.sleep(1)
@@ -15,17 +22,19 @@ while play == 0:
         time.sleep(1)
         print('Pomodori (25 minutos) a partir de agora!')
         time.sleep(1500)
+    	os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
         time.sleep(1)
         print('Pausa curta (05 minutos)')
         time.sleep(1)
         input('Pressione enter para iniciar a Pausa Curta..')
         time.sleep(300)
+    	os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
         counter = counter + 1
     else:
         print('Pausa Longa (15 minutos)')
         input('Pressione ENTER para iniciar a Pausa Longa..')
-        time.sleep(300)
-        time.sleep(600)
+        time.sleep(900)
+    	os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
 else:
     print("Finalizando...")
     time.sleep(2)
